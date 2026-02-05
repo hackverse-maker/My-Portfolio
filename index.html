@@ -4,230 +4,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio Website</title>
+    <title>Tariq Hussain | Web Developer Portfolio</title>
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/035acd7938.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="images/logo.png" class="logo">
-                <ul id="side-menu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            </nav>
-            <div class="header-text">
-                <p>UI/UX Designer</p>
-                <h1>Hi, I'm <span>Tariq </span><br> Hussain From  Rawalpindi Pakistan</h1>
-            </div>
-        </div>
-    </div>
+    <!-- Dark/Light Mode Toggle -->
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon"></i>
+    </button>
 
-    <!-- -----------------about----------------- -->
-    <div id="about">
-        <div class="container">
-            <div class="row">
-                <div class="about-col-1">
-                    <img src="images/my image.png">
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">Tariq<span>Hussain</span></a>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1 class="reveal">Hi, I'm <span>Tariq Hussain</span></h1>
+                    <h2 class="reveal">Web Developer & Website Creator</h2>
+                    <p class="reveal">I craft modern, robust, and visually stunning websites that deliver exceptional
+                        user experiences. Focused on building high-performance web solutions for clients worldwide.</p>
+                    <div class="social-links-hero reveal">
+                        <a href="https://www.linkedin.com/in/tariq-hussain-4b8b19397" target="_blank"
+                            aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100081445317849" target="_blank"
+                            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                    <div class="hero-btns reveal">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="images/cv.pdf" download class="btn btn-secondary"><i class="fas fa-download"></i>
+                            Download CV</a>
+                        <a href="#contact" class="btn btn-outline">Contact Me</a>
+                    </div>
                 </div>
-                <div class="about-col-2">
-                    <h1 class="sub-title">About Me</h1>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non amet, praesentium laboriosam
-                        exercitationem expedita sed placeat dolorem odio error cum? Modi animi blanditiis iure ipsum
-                        libero, optio suscipit, est nam, quas fuga aliquam. Rerum unde perferendis necessitatibus
-                        laboriosam ut, amet omnis sapiente id libero ipsa esse fuga deserunt eius blanditiis? Placeat
-                        aperiam modi sed nihil.</p>
-                    <div class="tab-titles">
-                        <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                        <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                        <p class="tab-links" onclick="opentab('education')">Education</p>
-                    </div>
-                    <div class="tab-contents active-tab" id="skills">
-                        <ul>
-                            <li><span>UI/UX</span><br> Designing Web/app interfaces</li>
-                            <li><span>Web Developer</span><br>Web app development</li>
-                            <li><span>App Development</span><br> Building Android/iOS apps</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="experience">
-                        <ul>
-                            <li><span>2021 - Current</span><br>UI/UX Design Training at ET Institute</li>
-                            <li><span>2019 - 2021</span><br> Team lead at StarApp LLC.</li>
-                            <li><span>2016 - 2017</span><br> Internship at ekart eCommerce</li>
-                        </ul>
-                    </div>
-                    <div class="tab-contents" id="education">
-                        <ul>
-                            <li><span>2016</span><br> UI/UX Design Training at ET Institute</li>
-                            <li><span>2016</span><br>MBA from MIT Rawalpindi.</li>
-                            <li><span>2014</span><br> BBA from ISM Rawalpindi.</li>
-                        </ul>
+                <div class="hero-image reveal">
+                    <div class="image-wrapper">
+                        <img src="images/my image.png" alt="Tariq Hussain Profile Image">
+                        <div class="blob-bg"></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- --------------------services----------------- -->
-    <div id="services">
-        <div class="container">
-            <h1 class="sub-title">My Services</h1>
-            <div class="services-list">
-                <div class="services-col-1">
-                    <!-- <img src="images/design.png"> -->
-                    <i class="fa-solid fa-crop-simple"></i>
-                    <h3>UI/UX Design</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
-                    <a href="#">Learn more</a>
-                </div>
-                <div class="services-col-1">
-                    <!-- <img src="images/development.png"> -->
-                    <i class="fa-solid fa-code"></i>
-                    <h3>Web Design</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p>
-                    <a href="#">Learn more</a>
-                </div>
-                <div class="services-col-1">
-                    <!-- <img src="images/app dev.png"> -->
-                    <i class="fa-brands fa-app-store-ios"></i>
-                    <h3>App Design</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.</p><a href="#">Learn
-                        more</a>
-                </div>
+            <div class="hero-waves">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                    <path fill-opacity="1"
+                        d="M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,165.3C672,139,768,117,864,138.7C960,160,1056,224,1152,229.3C1248,235,1344,181,1392,154.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                    </path>
+                </svg>
             </div>
-        </div>
-        <!-- ------------portfolio----------------- -->
-        <div id="portfolio">
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about section">
             <div class="container">
-                <h1 class="sub-title">My Work</h1>
-                <div class="work-list">
-                    <div class="work">
-                        <img src="images/work1.jpg">
-                        <div class="layer">
-                            <h3>Social Media App</h3>
-                            <p>The app connects you to the talented people around the world.
-                                Download it from play store.
-                            </p>
-                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <div class="section-title">
+                    <h2>About Me</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>Creative Developer Based in Pakistan</h3>
+                        <p>I am a passionate Web Developer with a strong focus on creating interactive and responsive
+                            web experiences. My journey in development is driven by a curiosity for how things work and
+                            a desire to build tools that solve real-world problems.</p>
+                        <p>With expertise in modern web technologies, I bridge the gap between complex backend logic and
+                            sleek frontend design. My goal is to deliver websites that are not just functional, but also
+                            provide a delightful user journey.</p>
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-num">2+</span>
+                                <span class="stat-label">Years of Experience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">20+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="work">
-                        <img src="images/work2.jpg">
-                        <div class="layer">
-                            <h3>Music App</h3>
-                            <p>The app connects you to the talented people around the world.
-                                Download it from play store.
-                            </p>
-                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    <div class="about-details">
+                        <div class="detail-card">
+                            <i class="fas fa-code"></i>
+                            <h4>Clean Code</h4>
+                            <p>Writing maintainable, scalable and efficient code is my priority.</p>
+                        </div>
+                        <div class="detail-card">
+                            <i class="fas fa-mobile-alt"></i>
+                            <h4>Responsive Design</h4>
+                            <p>Ensuring your website looks great on every screen size.</p>
                         </div>
                     </div>
-                    <div class="work">
-                        <img src="images/work3.jpg">
-                        <div class="layer">
-                            <h3>Online Shopping App</h3>
-                            <p>The app connects you to the talented people around the world.
-                                Download it from play store.
-                            </p>
-                            <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                    <!-- <div class="work">
-                    <img src="images/work4.jpg">
-                    <div class="layer">
-                        <h3>Social Media App</h3>
-                        <p>The app connects you to the talented people around the world.
-                            Download it from play store.
-                        </p>
-                        <a href="#"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-                    </div> -->
                 </div>
             </div>
-            <a href="#" class="btn">See more</a>
-        </div>
-        <!-- ------------------contact----------------- -->
-        <div id="contact">
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills section bg-alt">
             <div class="container">
-                <div class="contact-left">
-                    <h1 class="sub-title">Contact Me</h1>
-                    <p><i class="fa-solid fa-paper-plane"></i> tariqastory5@gmail.com</p>
-                    <p><i class="fa-solid fa-square-phone"></i> 03148951060</p>
-                    <div class="social-icons">
-                        <a href="https://www.facebook.com/profile.php?id=100081445317849"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://www.twitter.com"><i class="fa-brands fa-twitter-square"></i></a>
-                        <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/in/tariq-hussain-4b8b19397?miniProfileUrn=urn%3Ali%3Afs_miniProfile%3AACoAAGGFBIwBRwtdC02uiJ5DcFEOn6uy_3GwP3w&lipi=urn%3Ali%3Apage%3Ad_flagship3_search_srp_people%3BSmKdhdO5TxGd03YM2OVgPg%3D%3D"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://wa.me/03148951060"><i class="fa-brands fa-square-whatsapp"></i></a>
+                <div class="section-title">
+                    <h2>My Skills</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-html5"></i></div>
+                        <h3>HTML</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 95%;"></div>
+                        </div>
                     </div>
-                    <a href="./images/my-CV.pdf" download class="btn btn2">Download CV</a>
-                </div>
-                <div class="contact-right">
-                    <form name="submit-to-google-sheet">
-                        <input type="text" name="name" placeholder="Your Name" required>
-                        <input type="email" name="email" placeholder="Your Email" required>
-                        <input type="text" name="subject" placeholder="Subject" required>
-                        <textarea rows="6" name="message" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn btn2">Submit</button>
-                    </form>
-                    <span id="msg"></span>
-                </div>
-                <div class="copyright">
-                    <p>copyright <i class="fa-regular fa-copyright"></i> by Tariq Hussain</p>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-css3-alt"></i></div>
+                        <h3>CSS</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fab fa-js"></i></div>
+                        <h3>JavaScript</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-laptop-code"></i></div>
+                        <h3>Responsive Design</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-paint-brush"></i></div>
+                        <h3>UI Design</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-cloud-upload-alt"></i></div>
+                        <h3>Website Deployment</h3>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </section>
 
+        <!-- Projects Section -->
+        <section id="projects" class="projects section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Latest Projects</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="projects-grid">
+                    <!-- Project 1 -->
+                    <div class="project-card reveal" data-project="1">
+                        <div class="project-img">
+                            <img src="images/work1.jpg" alt="Tariq's Portfolio Website">
+                            <div class="project-overlay">
+                                <div class="overlay-btns">
+                                    <button class="btn btn-light open-modal">Details</button>
+                                    <a href="https://hackverse-maker.github.io/My-Portfolio/" target="_blank"
+                                        class="btn btn-light">Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Tariq's Portfolio</h3>
+                            <p>Professional showcase of skills and creative works.</p>
+                            <div class="project-tags">
+                                <span>HTML</span><span>CSS</span><span>JS</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 2 -->
+                    <div class="project-card reveal" data-project="2">
+                        <div class="project-img">
+                            <img src="images/work2.jpg" alt="Marquise Vault">
+                            <div class="project-overlay">
+                                <div class="overlay-btns">
+                                    <button class="btn btn-light open-modal">Details</button>
+                                    <a href="https://hackverse-maker.github.io/Marquise-Vault/" target="_blank"
+                                        class="btn btn-light">Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Marquise Vault</h3>
+                            <p>Secure and elegant platform for digital assets.</p>
+                            <div class="project-tags">
+                                <span>Responsive</span><span>UI Design</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 3 -->
+                    <div class="project-card reveal" data-project="3">
+                        <div class="project-img">
+                            <img src="images/work3.jpg" alt="Bint-e-Zahra Garments">
+                            <div class="project-overlay">
+                                <div class="overlay-btns">
+                                    <button class="btn btn-light open-modal">Details</button>
+                                    <a href="https://hackverse-maker.github.io/Bint-e-Zahra-garments-and-cosmetic/"
+                                        target="_blank" class="btn btn-light">Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Bint-e-Zahra Garments</h3>
+                            <p>E-commerce landing page for fashion & beauty.</p>
+                            <div class="project-tags">
+                                <span>E-commerce</span><span>Mobile-First</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project 4 -->
+                    <div class="project-card reveal" data-project="4">
+                        <div class="project-img">
+                            <img src="images/work4.jpg" alt="Rhyl Super Store">
+                            <div class="project-overlay">
+                                <div class="overlay-btns">
+                                    <button class="btn btn-light open-modal">Details</button>
+                                    <a href="#" target="_blank" class="btn btn-light">Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-info">
+                            <h3>Rhyl Super Store</h3>
+                            <p>Comprehensive superstore with inventory management.</p>
+                            <div class="project-tags">
+                                <span>JS Logic</span><span>Web Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <script>
+        <!-- Project Modal -->
+        <div id="project-modal" class="modal">
+            <div class="modal-content glass">
+                <span class="close-modal">&times;</span>
+                <div class="modal-body">
+                    <div class="modal-img">
+                        <img src="" alt="Project Image" id="modal-image">
+                    </div>
+                    <div class="modal-text">
+                        <h2 id="modal-title">Project Title</h2>
+                        <p id="modal-desc">Project description goes here...</p>
+                        <div class="modal-details">
+                            <h4>Key Features:</h4>
+                            <ul id="modal-features">
+                                <!-- Features injected by JS -->
+                            </ul>
+                        </div>
+                        <div class="modal-links">
+                            <a href="#" id="modal-live" target="_blank" class="btn btn-primary">Live Demo</a>
+                            <a href="#" id="modal-github" target="_blank" class="btn btn-outline">View Code</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-                var tablinks = document.getElementsByClassName("tab-links");
-                var tabcontents = document.getElementsByClassName("tab-contents");
-                function opentab(tabname) {
-                    for (tablink of tablinks) {
-                        tablink.classList.remove("active-link");
-                    }
-                    for (tabcontent of tabcontents) {
-                        tabcontent.classList.remove("active-tab");
-                    }
-                    event.currentTarget.classList.add("active-link");
-                    document.getElementById(tabname).classList.add("active-tab");
-                }
-            </script>
-            <script>
-                var sideMenu = document.getElementById("side-menu");
+        <!-- Contact Section -->
+        <section id="contact" class="contact section bg-alt">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Get In Touch</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="icon-box"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>03148951060</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="icon-box"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>tariqastory5@gmail.com</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-actions">
+                        <a href="tel:03148951060" class="btn btn-primary"><i class="fas fa-phone"></i> Call Now</a>
+                        <a href="mailto:tariqastory5@gmail.com" class="btn btn-secondary"><i
+                                class="fas fa-envelope"></i> Send Email</a>
+                    </div>
+                    <div class="social-links-contact">
+                        <a href="https://www.linkedin.com/in/tariq-hussain-4b8b19397" target="_blank"
+                            class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100081445317849" target="_blank"
+                            class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-                function openmenu() {
-                    sideMenu.style.right = "0";
-                }
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-logo">
+                    <a href="#" class="logo">Tariq<span>Hussain</span></a>
+                    <p>Building the web, one pixel at a time.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> 03148951060</p>
+                    <p><i class="fas fa-envelope"></i> tariqastory5@gmail.com</p>
+                    <div class="footer-socials">
+                        <a href="https://www.linkedin.com/in/tariq-hussain-4b8b19397" target="_blank"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100081445317849" target="_blank"><i
+                                class="fab fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Tariq Hussain. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-                function closemenu() {
-                    sideMenu.style.right = "-200px";
-                }
-            </script>
-            <script>
-                const scriptURL = "https://script.google.com/macros/s/AKfycbwbv4TtJbG4y5NiIVq367vZ6eajVRYIHbYqdEGJNTLiYLSRS6BUe5ZLeHMKp_6uRKpn/exec";
-                const form = document.forms['submit-to-google-sheet'];
-                const msg = document.getElementById("msg");
-
-                form.addEventListener('submit', e => {
-                    e.preventDefault();
-                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-                        .then(response => {
-                            msg.innerHTML = "Message sent successfully";
-                            setTimeout(function () {
-                                msg.innerHTML = "";
-                            }, 5000);
-                            form.reset();
-                        })
-                        .catch(error => console.error('Error!', error.message))
-                });
-                Logger.log(JSON.stringify(e.parameter));
-            </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
