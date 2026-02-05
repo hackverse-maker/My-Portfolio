@@ -99,11 +99,23 @@ themeToggle.addEventListener('click', () => {
 // --- Smooth Scrolling for all internal links ---
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const href = this.getAttribute('href');
+
+        // Handle empty hash or just #
+        if (href === '#' || href === '') {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+
+        const target = document.querySelector(href);
         if (target) {
+            e.preventDefault();
+            const navHeight = document.getElementById('navbar').offsetHeight || 70;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
             window.scrollTo({
-                top: target.offsetTop - 70, // Adjust for sticky nav height
+                top: targetPosition,
                 behavior: 'smooth'
             });
         }
@@ -113,7 +125,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // --- Modal Logic ---
 const projectData = {
     1: {
-        title: "Tariq's Portfolio",
+        title: "My Portfolio Website",
         desc: "A stunning showcase of professional skills, featuring modern design patterns and fully responsive layouts. Built with performance in mind.",
         img: "images/work1.jpg",
         features: ["Glassmorphism UI", "Dark/Light Mode", "Scroll Animations", "SEO Optimized"],
@@ -177,6 +189,32 @@ document.querySelectorAll('.open-modal').forEach(btn => {
 closeModal.addEventListener('click', () => {
     modal.classList.remove('active');
     document.body.style.overflow = "auto";
+});
+
+// --- Hero Button Functionality Fix ---
+const heroBtns = document.querySelectorAll('.hero-btns .btn');
+heroBtns.forEach(btn => {
+    btn.addEventListener('click', function (e) {
+        const href = this.getAttribute('href');
+
+        // Let download links work naturally
+        if (this.hasAttribute('download') || href.endsWith('.pdf')) {
+            return;
+        }
+
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+                const navHeight = document.getElementById('navbar').offsetHeight;
+                const top = target.getBoundingClientRect().top + window.pageYOffset - navHeight;
+                window.scrollTo({
+                    top: top,
+                    behavior: 'smooth'
+                });
+            }
+        }
+    });
 });
 
 window.addEventListener('click', (e) => {
